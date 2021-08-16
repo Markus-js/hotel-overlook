@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="332.529" height="79.515" viewBox="0 0 332.529 79.515">
+  <g id="hotel-overlook-logo" transform="translate(-12.561 -39)">
+    <text id="HOTEL_OVERLOOK" data-name="HOTEL OVERLOOK" transform="translate(12.561 87.586)" fill="#fff" font-size="38" font-family="OpenSans-Light, Open Sans" font-weight="300"><tspan x="0" y="0">HOTEL OVERLOOK</tspan></text>
+    <path id="Path_1" data-name="Path 1" d="M265.444,148.563l7.006-4.281,7.006,4.281-1.911-7.984,6.238-5.345-8.181-.65L272.449,127l-3.152,7.584-8.188.65,6.238,5.345Z" transform="translate(-85.351 -30.047)" fill="red"/>
+    <path id="Path_2" data-name="Path 2" d="M304.137,148.563l7.006-4.281,7.006,4.281-1.911-7.984,6.244-5.345-8.188-.65L311.143,127l-3.152,7.584-8.181.65,6.238,5.345Z" transform="translate(-98.641 -30.047)" fill="red"/>
+    <path id="Path_3" data-name="Path 3" d="M342.827,148.563l7.013-4.281,7.006,4.281-1.911-7.984,6.238-5.345-8.188-.65L349.84,127l-3.152,7.584-8.188.65,6.238,5.345Z" transform="translate(-111.927 -30.047)" fill="red"/>
+    <path id="Path_4" data-name="Path 4" d="M381.524,148.563l7.006-4.281,7.006,4.281-1.911-7.984,6.238-5.345-8.181-.65L388.529,127l-3.152,7.584-8.188.65,6.244,5.345Z" transform="translate(-125.213 -30.047)" fill="red"/>
+    <path id="Path_5" data-name="Path 5" d="M226.747,148.563l7.006-4.281,7.006,4.281-1.9-7.984,6.238-5.345-8.188-.65L233.753,127l-3.145,7.584-8.188.65,6.238,5.345Z" transform="translate(-72.065 -30.047)" fill="red"/>
+    <line id="Line_1" data-name="Line 1" x1="225.543" transform="translate(119.547 39.5)" fill="none" stroke="#aaa" stroke-miterlimit="10" stroke-width="1"/>
+    <line id="Line_2" data-name="Line 2" x1="30.86" transform="translate(119.547 108.443)" fill="none" stroke="#aaa" stroke-miterlimit="10" stroke-width="1"/>
+    <line id="Line_3" data-name="Line 3" x1="70.256" transform="translate(274.505 108.443)" fill="none" stroke="#aaa" stroke-miterlimit="10" stroke-width="1"/>
+  </g>
+</svg>

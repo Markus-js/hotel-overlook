@@ -1,24 +1,39 @@
-import logo from './logo.svg';
+
 import './App.css';
+import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
+import { Navigation } from './components/navigation/Navigation';
+import Forside from "./pages/forside/Forside"
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Navigation />
+      <Switch>
+        <Route path="/forside">
+          <Forside />
+        </Route>
+        <Route path="/hoteller_destinationer">
+          
+        </Route>
+        <Route path="/værelser">
+
+        </Route>
+        <Route path="/reservation">
+
+        </Route>
+        <Route path="/login">
+
+        </Route>
+        <Route exact path="/">
+          <Redirect to="/frontpage"></Redirect>
+        </Route>
+        {/* skal være i bunden ellers rammer path den samme / */}
+        <Route path="/">
+          <h2>404 siden findes ikke</h2>
+        </Route>
+      </Switch>
+    </Router>
   );
 }
 
