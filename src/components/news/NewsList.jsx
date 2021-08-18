@@ -1,16 +1,17 @@
-export default function NewsList({ news }) {
-  return (
-    <div className="container">
-      {news.map((item) => {
-        // handleClick = context
-        // setSliderToggle = context
+import React from "react";
 
-        return <News news={item} />;
-      })}
+export default function NewsList({ data }) {
+  console.log(data);
+  return (
+    <div>
+{/*       
+      {data.map((news) => {
+        let x = parseInt(news.id)
+        console.log(x)
+        if(x <= 3) {
+          return <h1>{news.title} </h1>;
+        }
+      })} */}
     </div>
   );
-}
-
-function News(item) {
-  <h1>{item.title} </h1>;
 }

@@ -3,6 +3,7 @@ import './App.css';
 import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
 import { Navigation } from './components/navigation/Navigation';
 import Forside from "./pages/forside/Forside"
+import HotellerDestinationer from './pages/hotellerDestinationer/HotellerDestinationer';
 
 
 function App() {
@@ -14,7 +15,7 @@ function App() {
           <Forside />
         </Route>
         <Route path="/hoteller_destinationer">
-          
+          <HotellerDestinationer />
         </Route>
         <Route path="/værelser">
 

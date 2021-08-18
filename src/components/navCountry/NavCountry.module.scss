@@ -1,0 +1,19 @@
+nav {
+  display: flex;
+  justify-content: center;
+  ul {
+    display: flex;
+    list-style-type: none;
+    :hover {
+      color: red;
+    }
+    li {
+      cursor: pointer;
+      margin: 5px;
+      padding: 10px;
+      :hover {
+        color: red;
+      }
+    }
+  }
+}

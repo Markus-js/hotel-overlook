@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { fetch2api } from "../../helpers/helper"
 import { Slider } from "../../components/slider/Slider";
-import NewsList  from "../../components/news/NewsList";
+//import NewsList  from "../../components/news/NewsList";
 
 export default function Frontpage()  {
-    const [news, setNews] = useState();
+    const [news, setNews] = useState([]);
 
     const getNews = async () => {
         const url = "https://api.mediehuset.net/overlook/news";
@@ -20,7 +20,7 @@ export default function Frontpage()  {
   return (
     <>
       <Slider />
-      <NewsList news={news} />
+      {/* {news && <NewsList data={news} />} */}
     </>
   );
 }
