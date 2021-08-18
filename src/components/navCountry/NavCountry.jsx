@@ -1,13 +1,14 @@
 
 import classes from "./NavCountry.module.scss";
 
-export default function NavCountry({setData, setURL}) {
+export default function NavCountry({setData, setURL, setRoomID}) {
   
 
 
   function handleCountry(x) {
     setData(x)
     setURL(`https://api.mediehuset.net/overlook/countries/`)
+    setRoomID(false)
   }
 
   return (

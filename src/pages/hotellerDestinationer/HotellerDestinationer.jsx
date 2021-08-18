@@ -39,7 +39,8 @@ export default function HotellerDestinationer() {
     <>
       <Header place={place} />  
       <section>
-        <NavCountry setData={setData} setURL={setURL} />
+        {/* setRoomID False */}
+        <NavCountry setData={setData} setURL={setURL} setRoomID={setRoomID}/>
         <div>
            <Desc place={place} />
           <div className={classes.cityContainer}>
@@ -59,7 +60,7 @@ export default function HotellerDestinationer() {
                 setRoomID={setRoomID}
               />
             )}
-            {roomID && <Room setRoomToggle={setRoomToggle} />}
+            {roomID && <Room roomID={roomID} setHotelID={setHotelID} />}
           </div>
         </div>
       </section>

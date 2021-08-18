@@ -20,7 +20,7 @@ export default function Hotel({ data, hotelID, setURL, setRoomID}) {
     setRoomID(id)
     setURL(`https://api.mediehuset.net/overlook/hotels/${id}`)
   }
-
+console.log("HOTEL")
   return (
     <>
       {hotelID &&
