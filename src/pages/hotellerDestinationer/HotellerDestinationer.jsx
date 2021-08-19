@@ -20,7 +20,7 @@ export default function HotellerDestinationer() {
   // Toggle Room
   const [roomID, setRoomID] = useState(false)
   // Reservation Data
-  const [reservationData, setReservationData] = useState("")
+  const [reservationData, setReservationData] = useState()
 
   // Fetch API
   const getplace = async () => {
