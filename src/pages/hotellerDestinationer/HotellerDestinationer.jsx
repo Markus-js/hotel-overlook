@@ -6,7 +6,8 @@ import Cities from "../../components/cities/Cities";
 import Hotel from "../../components/hotel/Hotel";
 import Header from "../../components/header/Header";
 import Desc from "../../components/desc/Desc";
-import Room from "../../components/room/Room";
+import RoomList from "../../components/rooms/RoomList";
+import Reservation from "../../components/reservation/Reservation";
 
 export default function HotellerDestinationer() {
   const [URL, setURL] = useState(
@@ -16,10 +17,10 @@ export default function HotellerDestinationer() {
   const [place, setPlace] = useState("");
   // Toggle Hotel
   const [hotelID, setHotelID] = useState(false);
-  const [hotelToggle, setHotelToggle] = useState(false);
   // Toggle Room
   const [roomID, setRoomID] = useState(false)
-  const [roomToggle, setRoomToggle] = useState(false);
+  // Reservation Data
+  const [reservationData, setReservationData] = useState("")
 
   // Fetch API
   const getplace = async () => {
@@ -33,7 +34,7 @@ export default function HotellerDestinationer() {
     getplace();
   }, [data, URL]);
 
-  console.log(place)
+  console.log(reservationData)
 
   return (
     <>
@@ -60,7 +61,8 @@ export default function HotellerDestinationer() {
                 setRoomID={setRoomID}
               />
             )}
-            {roomID && <Room roomID={roomID} setHotelID={setHotelID} />}
+            {roomID && <RoomList roomID={roomID} setHotelID={setHotelID} setReservationData={setReservationData} />}
+            {reservationData && <Reservation reservationData={reservationData} />}
           </div>
         </div>
       </section>
