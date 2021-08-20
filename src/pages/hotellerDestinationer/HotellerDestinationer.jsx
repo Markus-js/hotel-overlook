@@ -7,8 +7,7 @@ import Hotel from "../../components/hotel/Hotel";
 import Header from "../../components/header/Header";
 import Desc from "../../components/desc/Desc";
 import RoomList from "../../components/rooms/RoomList";
-import Reservation from "../../components/reservation/Reservation";
-
+import { useAuth } from "../../contexts/AuthContext"
 export default function HotellerDestinationer() {
   const [URL, setURL] = useState(
     `https://api.mediehuset.net/overlook/countries/`
@@ -20,7 +19,10 @@ export default function HotellerDestinationer() {
   // Toggle Room
   const [roomID, setRoomID] = useState(false)
   // Reservation Data
-  const [reservationData, setReservationData] = useState()
+  const { reservationData } = useAuth();
+  const { setReservationData } = useAuth();
+  
+    console.log(reservationData)
 
   // Fetch API
   const getplace = async () => {
@@ -34,7 +36,6 @@ export default function HotellerDestinationer() {
     getplace();
   }, [data, URL]);
 
-  console.log(reservationData)
 
   return (
     <>
@@ -62,7 +63,7 @@ export default function HotellerDestinationer() {
               />
             )}
             {roomID && <RoomList roomID={roomID} setHotelID={setHotelID} setReservationData={setReservationData} />}
-            {reservationData && <Reservation reservationData={reservationData} />}
+            
           </div>
         </div>
       </section>

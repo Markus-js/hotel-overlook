@@ -1,57 +1,81 @@
 import React, { useState } from "react";
-import { fetch2api } from "../../helpers/helper";
+import firebase from "firebase";
+import AdmindReservation from "../adminReservation/AdmindReservation";
 // import emailjs from "emailjs-com";
 // import { init } from "emailjs-com";
 // init("user_iKlFVYLk9kyYQV2fO6bD6");
 
+export default function Form({ currentUser, reservationData }) {
+  const [data, setData] = useState({
+    priceClass: reservationData[0].type,
+    num_people: "1",
+  });
 
-
-export default function Form() {
-  const [data, setData] = useState({ name: "", email: "", tlf: "" });
-
-  function handleFormData(e){
+  function handleFormData(e) {
     e.preventDefault();
-    console.log(data)
+    console.log(data);
+
+    firebase.firestore().collection("reservations").add({
+      type: data.priceClass,
+      num_people: data.num_people,
+    });
+
     e.target.reset();
   }
- 
 
   console.log(data);
+  const arrAmountOfPeople = [];
+  const amountOfPeople = reservationData[1].roomData.num_persons;
+  for (let i = 0; i < amountOfPeople; i++) {
+    arrAmountOfPeople.push(i + 1);
+  }
 
   return (
-                 
-    <form onSubmit={handleFormData}>
-      <div>
-        <label>Dit navn og efternavn:</label>
-        <input
-          name="name"
-          type="text"
-          placeholder="Anders Andersen"
-          onChange={(e) => setData({ ...data, name: e.target.value })}
-          required
-        />
-      </div>
-      <div>
-        <label>Dit telefon nr.:</label>
-        <input
-          name="tlf"
-          type="number"
-          placeholder="+45 12 34 56 78"
-          onChange={(e) => setData({ ...data, tlf: e.target.value })}
-          required
-        />
-      </div>
-      <div>
-        <label>Din mailadresse:</label>
-        <input
-          name="user_email"
-          type="email"
-          placeholder="example@email.com"
-          onChange={(e) => setData({ ...data, email: e.target.value })}
-          required
-        />
-      </div>
-      <input type="submit" className="btn" />
-    </form>
+    <>
+      <form onSubmit={handleFormData}>
+        <div>
+          <label>Vælg antal personer</label>
+          <select
+            onChange={(e) => setData({ ...data, num_people: e.target.value })}
+            required
+          >
+            {arrAmountOfPeople.map((i) => {
+              return (
+                <option key={i} value={i}>
+                  {i}
+                </option>
+              );
+            })}
+          </select>
+        </div>
+        <div>
+          <p>Vælg prisklasse:</p>
+          <label>
+            <input
+              type="radio"
+              value="normal"
+              name="priceClass"
+              defaultChecked={reservationData[0].type === "NORMAL"}
+              onChange={(e) => setData({ ...data, priceClass: e.target.value })}
+            />
+            Normal
+          </label>
+        </div>
+        <div>
+          <label>
+            <input
+              type="radio"
+              value="flex"
+              name="priceClass"
+              defaultChecked={reservationData[0].type === "FLEX"}
+              onChange={(e) => setData({ ...data, priceClass: e.target.value })}
+            />
+            flex
+          </label>
+        </div>
+        <input type="submit" className="btn" />
+      </form>
+      <AdmindReservation />
+    </>
   );
 }

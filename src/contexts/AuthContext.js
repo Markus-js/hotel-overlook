@@ -35,6 +35,9 @@ export function AuthProvider({ children }) {
     return currentUser.updatePassword(password)
   }
 
+  const [reservationData, setReservationData] = useState();
+
+
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((user) => {
       setcurrentUser(user);
@@ -51,7 +54,9 @@ export function AuthProvider({ children }) {
     logout,
     resetPassword,
     updateEmail,
-    updatePassword
+    updatePassword,
+    reservationData,
+    setReservationData
   };
 
   return (

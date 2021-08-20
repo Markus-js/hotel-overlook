@@ -1,20 +1,22 @@
 import React, {useState} from "react";
+import { useHistory } from "react-router-dom";
 
 export default function SelectedRoom({ roomData, setReservationData }) {
-    const [tt, setTT] = useState(true)
+    const [roomToggle, setRoomToggle] = useState(true)
+    const history = useHistory();
 
 console.log("SELECTED")  
-console.log(roomData)
 
 function handleReservation(type) {
     
     setReservationData([{type}, {roomData}])
-    setTT(false)
+    setRoomToggle(false)
+    history.push("/");
 }
 
   return (
        <>
-       {tt &&  <div>
+       {roomToggle &&  <div>
         <div>
           <img src={roomData.images[0].image} alt={roomData.images[0].title} />
           <h3>{roomData.title}</h3>
