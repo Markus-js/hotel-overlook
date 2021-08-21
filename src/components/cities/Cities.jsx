@@ -13,7 +13,7 @@ export default function Countries({ data, setData, setURL, setHotelID }) {
   // Lifecycle management
   useEffect(() => {
     getCityData();
-  }, []);
+  }, [data]);
   
   function handlePickCity(id) {
     setData("")
@@ -23,7 +23,6 @@ export default function Countries({ data, setData, setURL, setHotelID }) {
     setURL(`https://api.mediehuset.net/overlook/cities/${id}`)
   }
   console.log("CITIES")
-
   return (
     <>
       {data &&

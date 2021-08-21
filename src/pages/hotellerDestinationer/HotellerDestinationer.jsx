@@ -54,7 +54,7 @@ export default function HotellerDestinationer() {
                 setHotelID={setHotelID}
               />
             )}
-            {hotelID && (
+            {hotelID && data=== "" && (
               <Hotel
               data={data}
                 hotelID={hotelID}
