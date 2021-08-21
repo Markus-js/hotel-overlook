@@ -1,0 +1,65 @@
+@mixin storke-dash($length, $offset) {
+    stroke-dasharray: $length;
+    stroke-dashoffset: $offset;
+}
+
+$laptop: 1200px;
+
+.burgerMenu {
+    fill: none;
+    stroke: white;
+    width: 70px;
+    stroke-width: 6;
+    cursor: pointer;
+    position: fixed;
+    top: 15px;
+    right: 10px;
+
+    @media (min-width: $laptop) {
+        display: none;
+    }
+
+    position: absolute;
+    right: 5%;
+
+    .burgerMenu_topLine, .burgerMenu_bottomLine  {
+        @include storke-dash(125, 0);
+    }
+
+    .burgerMenu_longPath {
+        @include storke-dash(998.7, 873.7);
+    }
+
+    .burgerMenu_crossLine {
+        @include storke-dash(160.1, 160.1);
+    }
+
+    &.active {
+        .burgerMenu_topLine, .burgerMenu_bottomLine  {
+            animation: topAndBottomLine_activate .5s forwards;
+        }
+
+        .burgerMenu_longPath {
+            animation: longPath_activate .5s forwards .5s;
+        }
+    
+        .burgerMenu_crossLine {
+            animation: crossLine_activate .5s forwards 1s;
+        }
+    }
+}
+
+@keyframes topAndBottomLine_activate {
+    from { stroke-dashoffset: 0; }
+    to { stroke-dashoffset: 125; }
+}
+
+@keyframes longPath_activate {
+    from { stroke-dashoffset: 873.7; }
+    to { stroke-dashoffset: -838.6; }
+}
+
+@keyframes crossLine_activate {
+    from { stroke-dashoffset: 160.1; }
+    to { stroke-dashoffset: 0; }
+}

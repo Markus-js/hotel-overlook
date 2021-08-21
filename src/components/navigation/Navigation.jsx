@@ -1,34 +1,57 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import classes from "./navigation.module.scss";
+
+import BurgerMenu from "../burgerMenu/BurgerMenu";
+import Style from "./Navigation.module.scss";
+// Logo 
 import Logo from "../../assets/logo.svg";
 
-export function Navigation() {
-  return (
-    <nav className={classes.navbar}>
-      <div>
-      <Link to="/frontpage">
-        <img className={classes.logo} src={Logo} alt="hotel_overlook" />
-      </Link>
-      </div>
-     
-      <ul>
-        <li>
-          <Link to="/forside">FORSIDE</Link>
-        </li>
-        <li>
-          <Link to="/hoteller_destinationer">hoteller &amp; destinationer</Link>
-        </li>
+const Navigation = () => {
+  const [menuActive, setMenuActive] = useState(false);
 
-        <li>
-          <Link to="/værelser">værelser</Link>
-        </li>
-        <li>
-          <Link to="/reservation">reservation</Link>
-        </li>
-        <li>
-          <Link to="/login">login</Link>
-        </li>
-      </ul>
-    </nav>
+  const navigationList = [
+    { print: "Forside", path: "/forside" },
+    { print: "Hoteller & Destinationer", path: "/destinationer" },
+    { print: "Værelser", path: "/værelser" },
+    { print: "Reservation", path: "/reservation" },
+    { print: "Login", path: "/login" },
+  ];
+
+  const handleClick = () => setMenuActive(false);
+
+  return (
+    <header className={Style.pageNavigation}>
+      {/* <p className={Style.logo}>HOTEL OVERLOOK</p> */}
+      <Link to="/frontpage">
+        <img className={Style.logo} src={Logo} alt="hotel_overlook" />
+      </Link>
+      <nav
+        className={
+          menuActive
+            ? `${Style.pageNavigation_nav} ${Style.active}`
+            : Style.pageNavigation_nav
+        }
+      >
+        <ul className={Style.pageNavigation_ul}>
+          {navigationList.map((item, index) => {
+            return (
+              <li key={index} className={Style.pageNavigation_li}>
+                <Link
+                  onClick={handleClick}
+                  to={item.path}
+                  className={Style.pageNavigation_link}
+                >
+                  {item.print}
+                </Link>
+              </li>
+            );
+          })}
+        </ul>
+      </nav>
+
+      <BurgerMenu menuActive={menuActive} setMenuActive={setMenuActive} />
+    </header>
   );
-}
+};
+
+export default Navigation;

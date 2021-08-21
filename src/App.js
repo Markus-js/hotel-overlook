@@ -1,7 +1,7 @@
 
 import './App.css';
 import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
-import { Navigation } from './components/navigation/Navigation';
+import Navigation from './components/navigation/Navigation';
 import Forside from "./pages/forside/Forside"
 import HotellerDestinationer from './pages/hotellerDestinationer/HotellerDestinationer';
 // Login
@@ -13,6 +13,7 @@ import Login from "./components/login/Login";
 import PrivateRoute from "./components/login//PrivateRoute";
 import ForgotPassword from "./components/login/ForgotPassword";
 import UpdateProfile from "./components/login/UpdateProfile";
+
 
 
 

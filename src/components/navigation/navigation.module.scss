@@ -1,25 +1,114 @@
-@import "../../styles/theme.scss";
+$laptop: 1200px;
 
-.navbar {
+.pageNavigation {
     width: 100%;
-    background-color: $main-color;
+    height: 15vh;
+    background-color: black;
+    position: sticky;
+    top: 0;
     display: flex;
-    justify-content: space-between;
-    ul{
-       display: flex;
-        height: 20px;
-        li{
-            padding: 0 20px;
-            border-left: 1px solid #fff;
-            list-style-type: none;
-            a{
-                color: #fff;
-                text-decoration: none;
-            }
-            a:hover{
-                color: darken($color: #fff, $amount: 25);
+    align-items: center;
+    flex-direction: row;
+    z-index: 9900;
+
+    .logo {
+        
+        position: absolute;
+        left: 8%;
+        top: 35%;
+        width: 150px;
+        height: auto;
+
+        @media (min-width: $laptop) {
+            width: 300px;
+            left: 8%;
+            top: 25%;
+            font-size: 2rem;
+        }
+    }
+
+    .pageNavigation_nav {
+        position: fixed;
+        bottom: 20px;
+        right: 100px;
+
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        background-color: black;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        visibility: hidden;
+        opacity: 0;
+
+        &.active {
+            visibility: visible;
+            opacity: 1;
+            transition: visibility .5s ease-out, opacity .5s ease-out;
+        }
+
+        @media (min-width: $laptop) {
+            position: absolute;
+            bottom: 20px;
+            right: 100px;
+
+            width: unset;
+            height: unset;
+            top: unset;
+            left: unset;
+            background-color: transparent;
+            visibility: visible;
+            opacity: 1;
+        }        
+
+        .pageNavigation_ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            color: white;
+            align-items: center;
+
+            @media (min-width: $laptop) {
+                flex-direction: row;
             }
 
+            .pageNavigation_li {
+                border-bottom: 1px solid white;
+                padding: 15px 10px 5px 10px;
+
+                &:last-child {
+                    border-bottom: none;
+                }
+
+                @media (min-width: $laptop) {
+                    border-right: 1px solid white;
+                    border-bottom: none;
+                    padding: 0px 10px;
+
+                    &:last-child {
+                        border-right: none;
+                    }
+                }
+
+                .pageNavigation_link {
+                    text-decoration: none;
+                    color: white;
+                    text-transform: uppercase;
+                    font-size: 20px;
+
+                    @media (min-width: $laptop) {
+                        font-size: 14px;
+                    }
+
+                    &:hover {
+                        color: lightcoral;
+                    }
+                }
+            }
         }
     }
 }
