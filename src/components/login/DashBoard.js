@@ -22,19 +22,23 @@ export default function DashBoard() {
       setError("Failed to log out");
     }
   }
-  
+
   return (
     <>
       {reservationData && <h1>{reservationData[0].type}</h1>}
-      {reservationData && <Form currentUser={currentUser} reservationData={reservationData} />}
+      {reservationData && (
+        <Form
+          currentUser={currentUser}
+          reservationData={reservationData}
+          setReservationData={setReservationData}
+        />
+      )}
       <section>
         <div>
           <h2>Profile</h2>
           {error && <Alert variant="danger">{error}</Alert>}
           <strong>Email:</strong> {currentUser.email}
-          <Link to="/update-profile" >
-            Update Profile
-          </Link>
+          <Link to="/update-profile">Update Profile</Link>
         </div>
       </section>
       <div>
