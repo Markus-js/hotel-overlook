@@ -8,7 +8,8 @@ export default function NavCountry({ setData, setURL, setRoomID }) {
   }
 
   return (
-    <nav className={classes.nav}>
+    <>
+    <nav className={classes.nav_country}>
       <ul>
         <li onClick={() => handleCountry(1)}>Danmark</li>
         <li onClick={() => handleCountry(2)}>Svarige</li>
@@ -19,5 +20,7 @@ export default function NavCountry({ setData, setURL, setRoomID }) {
         <li onClick={() => handleCountry(7)}>Polen</li>
       </ul>
     </nav>
+    <div className={classes.shadow} ></div>
+    </>
   );
 }

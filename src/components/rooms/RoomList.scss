@@ -1,0 +1,110 @@
+.intro {
+  margin-top: 20px;
+}
+.content_section {
+  margin: 20px 5%;
+  .section_container {
+    margin-top: 20px;
+
+    .container {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      max-width: 1000px;
+      float: left;
+      padding: 30px 30px;
+      margin: 20px 0;
+      background: #fff;
+      gap: 10px;
+      width: 100%;
+      cursor: pointer;
+      .btn_return{
+        position: absolute;
+        bottom: -50px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: #fff;
+        border-radius: 100%;
+        border: 1px solid #CCC;
+        cursor: pointer;
+        padding: 25px; 
+        img {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 20px;
+          height: auto;
+        }
+      }
+    }
+    
+      h3 {
+        float: right;
+        white-space: nowrap;
+        position: absolute;
+        bottom: 5%;
+        right: 5%;
+      }
+    }
+    .details {
+      position: relative;
+      float: left;
+      background: #fff;
+      max-width: 1000px;
+      padding: 30px 30px;
+      margin: 20px 0;
+      padding-top: -40px;
+      margin-top: -20px;
+      .btn_return{
+        position: absolute;
+        bottom: -50px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: #fff;
+        border-radius: 100%;
+        border: 1px solid #CCC;
+        cursor: pointer;
+        padding: 25px; 
+        img {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 20px;
+          height: auto;
+        }
+      }
+      ul {
+        text-align: justify;
+        text-justify: inter-word;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 30px 20px;
+        li {
+          white-space: nowrap;
+          padding: 10px;
+          margin-right: 50px;
+        }
+      }
+    }
+    .booking_container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      .booking_card {
+        background: #ebebeb;
+        width: 400px;
+        padding: 20px;
+        border-radius: 10px;
+        border: 1px #707070 solid;
+        .wrap {
+          margin-top: 10px;
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-end;
+        }
+      }
+    }
+  }

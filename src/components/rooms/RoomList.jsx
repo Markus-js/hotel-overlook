@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { fetch2api } from "../../helpers/helper";
 import Room from "./Room";
-import classes from "./RoomList.module.scss";
 import SelectedRoom from "./SelectedRoom";
+import "./RoomList.scss";
 
 export default function RoomList({ roomID, setHotelID, setReservationData }) {
+  const [ID, setID] = useState(roomID)
   const [roomData, setRoomData] = useState({});
   const [roomToggle, setRoomToggle] = useState(false);
   const [roomListData, setRoomListData] = useState([]);
@@ -26,24 +27,29 @@ export default function RoomList({ roomID, setHotelID, setReservationData }) {
   }, [URL]);
   return (
     <>
-      <h3>Vores værelser</h3>
-      {roomListData &&
-        roomListData.map((room) => {
-          return (
-            <Room
-              key={room.id}
-              room={room}
-              setURL={setURL}
-              setRoomToggle={setRoomToggle}
+      <h2 className="intro">Vores værelser</h2>
+      <section className="section_container" >
+        {roomListData &&
+          roomListData.map((room) => {
+            return (
+              <Room
+                key={room.id}
+                room={room}
+                setURL={setURL}
+                setRoomToggle={setRoomToggle}
+              />
+            );
+          })}
+        {roomData && roomToggle && (
+          <SelectedRoom
+            roomData={roomData}
+            setReservationData={setReservationData}
+            ID={ID}
+            setID={setID}
+            setURL={setURL}
             />
-          );
-        })}
-      {roomData && roomToggle && (
-        <SelectedRoom
-          roomData={roomData}
-          setReservationData={setReservationData}
-        />
-      )}
+        )}
+      </section>
     </>
   );
 }

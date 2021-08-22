@@ -15,15 +15,15 @@ $laptop: 1200px;
         
         position: absolute;
         left: 8%;
-        top: 35%;
-        width: 150px;
-        height: auto;
+        top: 30%;
+        width: clamp(150px, 50%, 250px);
+        height: 50px;
+        
 
         @media (min-width: $laptop) {
-            width: 300px;
             left: 8%;
             top: 25%;
-            font-size: 2rem;
+            
         }
     }
 

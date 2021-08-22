@@ -1,9 +1,46 @@
-*{
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
-$main-color: #000;
+body {
+  background: #ebebeb;
+}
+$main-color: #ebebeb;
 
-$margin: 8px;
+$margin: 0 0 10px 0;
 $padding: 8px;
+
+h1,
+h2,
+h3,
+h4 {
+  margin: $margin;
+}    
+p{
+  margin: $margin;
+}
+
+.card {
+  margin-right: 30px;
+  margin-bottom: 30px;
+  width: 300px;
+  background: #fff;
+  box-shadow: 0 5px 10px 5px rgba(17, 17, 17, 0.187);
+}
+.btn {
+  color: #fff;
+  font-size: 20px;
+  background: rgb(255, 0, 0);
+  background: linear-gradient(
+    180deg,
+    rgba(252, 0, 0, 1) 0%,
+    rgba(199, 25, 25, 1) 72%,
+    rgba(255, 0, 0, 1) 100%
+  );
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  padding: 15px 20px;
+  cursor: pointer;
+}

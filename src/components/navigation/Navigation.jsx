@@ -11,9 +11,7 @@ const Navigation = () => {
 
   const navigationList = [
     { print: "Forside", path: "/forside" },
-    { print: "Hoteller & Destinationer", path: "/destinationer" },
-    { print: "Værelser", path: "/værelser" },
-    { print: "Reservation", path: "/reservation" },
+    { print: "Hoteller & Destinationer", path: "/hoteller_destinationer" },
     { print: "Login", path: "/login" },
   ];
 
@@ -22,7 +20,7 @@ const Navigation = () => {
   return (
     <header className={Style.pageNavigation}>
       {/* <p className={Style.logo}>HOTEL OVERLOOK</p> */}
-      <Link to="/frontpage">
+      <Link to="/forside">
         <img className={Style.logo} src={Logo} alt="hotel_overlook" />
       </Link>
       <nav

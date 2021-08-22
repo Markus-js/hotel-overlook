@@ -28,7 +28,7 @@ export default function Countries({ data, setData, setURL, setHotelID }) {
       {data &&
         cityData.map((city, idx) => {
           return (
-            <div onClick={() => handlePickCity(city.id)} className={classes.card} key={idx} >
+            <div onClick={() => handlePickCity(city.id)} className="card" key={idx} >
               <div>
                 <img src={city.image} alt={city.name} />
               </div>

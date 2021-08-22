@@ -28,7 +28,7 @@ console.log("HOTEL")
           return (
             <div
               onClick={() => handlePickHotel(hotel.id)}
-              className={classes.card}
+              className="card"
               key={idx}
             >
               <div>

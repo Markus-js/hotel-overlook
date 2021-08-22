@@ -5,7 +5,7 @@ import NavCountry from "../../components/navCountry/NavCountry";
 import Cities from "../../components/cities/Cities";
 import Hotel from "../../components/hotel/Hotel";
 import Header from "../../components/header/Header";
-import Desc from "../../components/desc/Desc";
+import Desc from "../../components/reusableFunction-Description/Desc";
 import RoomList from "../../components/rooms/RoomList";
 import { useAuth } from "../../contexts/AuthContext"
 export default function HotellerDestinationer() {
@@ -22,7 +22,6 @@ export default function HotellerDestinationer() {
   const { reservationData } = useAuth();
   const { setReservationData } = useAuth();
   
-    console.log(reservationData)
 
   // Fetch API
   const getplace = async () => {
@@ -40,7 +39,7 @@ export default function HotellerDestinationer() {
   return (
     <>
       <Header place={place} />  
-      <section>
+      <section className="content_section">
         {/* setRoomID False */}
         <NavCountry setData={setData} setURL={setURL} setRoomID={setRoomID}/>
         <div>

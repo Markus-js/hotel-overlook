@@ -1,8 +1,21 @@
-nav {
+.nav_country {
+  margin-top: -20px;
   display: flex;
+
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(255, 255, 255, 1) 33%,
+    rgba(255, 255, 255, 1) 66%,
+    rgba(0, 0, 0, 0) 100%
+  );
   justify-content: center;
+
   ul {
     display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
     list-style-type: none;
     :hover {
       color: red;
@@ -16,4 +29,16 @@ nav {
       }
     }
   }
+}
+.shadow {
+  height: 2px;
+  opacity: 30%;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(184, 184, 184, 1) 33%,
+    rgba(184, 184, 184, 1) 66%,
+    rgba(85, 85, 85, 0) 100%
+  );
 }

@@ -1,3 +1,5 @@
+import classes from "./Desc.module.scss"
+
 export default function Desc({ place }) {
   let itDoes = [];
   let intro = "Vores hoteller i ";
@@ -19,10 +21,10 @@ export default function Desc({ place }) {
   }
 
   return (
-    <div>
-      <h3>
+    <div className={classes.description_container}>
+      <h2>
         {intro} {itDoes[0]} {country}
-      </h3>
+      </h2>
       <p>{itDoes[1]} </p>
       <p>{itDoes[3]} </p>
     </div>
