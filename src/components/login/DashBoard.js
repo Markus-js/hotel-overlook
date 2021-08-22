@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Card, Button, Alert } from "react-bootstrap";
 import { useAuth } from "../../contexts/AuthContext";
 import { Link, useHistory } from "react-router-dom";
+import AdmindReservation from "../adminReservation/AdmindReservation";
 import Form from "../form/Form";
 
 export default function DashBoard() {
@@ -41,6 +42,7 @@ export default function DashBoard() {
           <Link to="/update-profile">Update Profile</Link>
         </div>
       </section>
+      <AdmindReservation />
       <div>
         <button variant="link" onClick={handleLoguout}>
           Log Out

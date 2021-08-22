@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import firebase from "firebase";
+import classes from "./AdmindReservation.module.scss"
 
 export default function AdmindReservation() {
   const [reservationList, setReservationList] = useState();
@@ -29,12 +30,12 @@ export default function AdmindReservation() {
   return (
     <>
       {reservationList && (
-        <div>
+        <div className={classes.container} >
           {reservationList.map((r) => {
             return (
-              <div key={r.id}>
-                <p>{r.type}</p>
-                <p>{r.num_people}</p>
+              <div key={r.id} className={classes.wrapper}>
+                <span>{r.type}</span>
+                <span>{r.num_people}</span>
                 <span onClick={() => handleDelete(r.id)}>X</span>
               </div>
             );

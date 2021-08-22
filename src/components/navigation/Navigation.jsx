@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 import BurgerMenu from "../burgerMenu/BurgerMenu";
-import Style from "./Navigation.module.scss";
+import classes from "./Navigation.module.scss";
 // Logo 
 import Logo from "../../assets/logo.svg";
 
@@ -18,26 +18,26 @@ const Navigation = () => {
   const handleClick = () => setMenuActive(false);
 
   return (
-    <header className={Style.pageNavigation}>
-      {/* <p className={Style.logo}>HOTEL OVERLOOK</p> */}
+    <header className={classes.pageNavigation}>
+      {/* <p className={classes.logo}>HOTEL OVERLOOK</p> */}
       <Link to="/forside">
-        <img className={Style.logo} src={Logo} alt="hotel_overlook" />
+        <img className={classes.logo} src={Logo} alt="hotel_overlook" />
       </Link>
       <nav
         className={
           menuActive
-            ? `${Style.pageNavigation_nav} ${Style.active}`
-            : Style.pageNavigation_nav
+            ? `${classes.pageNavigation_nav} ${classes.active}`
+            : classes.pageNavigation_nav
         }
       >
-        <ul className={Style.pageNavigation_ul}>
+        <ul className={classes.pageNavigation_ul}>
           {navigationList.map((item, index) => {
             return (
-              <li key={index} className={Style.pageNavigation_li}>
+              <li key={index} className={classes.pageNavigation_li}>
                 <Link
                   onClick={handleClick}
                   to={item.path}
-                  className={Style.pageNavigation_link}
+                  className={classes.pageNavigation_link}
                 >
                   {item.print}
                 </Link>

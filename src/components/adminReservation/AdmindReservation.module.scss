@@ -1,0 +1,12 @@
+.container {
+  .wrapper {
+    display: flex;
+    flex-direction: row;
+    width: 600px;
+    justify-content: space-between;
+    span {
+        width: 600px;
+        text-align-last: start;
+    }
+  }
+}

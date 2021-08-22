@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import firebase from "firebase";
-import AdmindReservation from "../adminReservation/AdmindReservation";
+
 // import emailjs from "emailjs-com";
 // import { init } from "emailjs-com";
 // init("user_iKlFVYLk9kyYQV2fO6bD6");
 
-export default function Form({ currentUser, reservationData }) {
+export default function Form({ currentUser, reservationData, setReservationData}) {
   const [data, setData] = useState({
     priceClass: reservationData[0].type,
     num_people: "1",
@@ -21,6 +21,7 @@ export default function Form({ currentUser, reservationData }) {
     });
 
     e.target.reset();
+    setReservationData(false)
   }
 
   console.log(data);
@@ -75,7 +76,7 @@ export default function Form({ currentUser, reservationData }) {
         </div>
         <input type="submit" className="btn" />
       </form>
-      <AdmindReservation />
+      
     </>
   );
 }
