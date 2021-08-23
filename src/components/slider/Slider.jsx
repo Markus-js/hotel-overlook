@@ -27,7 +27,7 @@ export function Slider() {
     return (
       <section className={classes.carouselSec} >
         <Header />
-        <Carousel autoPlay={false} className={classes.carousel}>
+        <Carousel autoPlay={true} className={classes.carousel}>
         {carouselItems.map((item, index) => {
           return <Item key={index} item={item}  />;
         })}
